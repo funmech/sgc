@@ -1,0 +1,6 @@
+google-cloud-bigquery
+google-cloud-datastore
+google-cloud-pubsub
+# not sure if this is the best option for BQ queries
+# google-cloud-bigquery-storage
+google-cloud-bigquery
