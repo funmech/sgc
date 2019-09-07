@@ -3,8 +3,9 @@
 ## Prepare env
 The dependencies are saved in [requirements.txt](gcloud_clients/requirements.txt).
 
-## Run examples
+## Run examples in [examples](examples)
 ```shell
+   export GOOGLE_APPLICATION_CREDENTIALS=/path/key.json
    export PYTHONPATH=$PYTHONPATH:$(pwd)
    python examples/bigquery.py
 ```
