@@ -56,8 +56,11 @@ class SClient(Info, pubsub.SubscriberClient):
         # The `subscription_path` method creates a fully qualified identifier
         # in the form `projects/{project_id}/subscriptions/{subscription_name}`
         subscription_path = self.subscription_path(subscription_name)
-
+        count = 0
         def callback(message):
+            nonlocal count
+            count += 1
+            logger.debug('Message has received since started: %d', count)
             logger.debug('Received message: {}'.format(message))
             message.ack()
 
@@ -67,4 +70,4 @@ class SClient(Info, pubsub.SubscriberClient):
         # exiting to allow it to process messages asynchronously in the background.
         logger.debug('Listening for messages on {}'.format(subscription_path))
         while True:
-            time.sleep(60)
+            time.sleep(1)
